@@ -6,24 +6,58 @@ var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
+var jade = require('gulp-jade');
+var include = require("gulp-include");
 
 var paths = {
-  sass: ['./scss/**/*.scss']
+  sass: ['./src/scss/**/*.scss']
 };
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['build']);
 
-gulp.task('sass', function(done) {
-  gulp.src('./scss/ionic.app.scss')
+gulp.task('build', ['build:sass', 'build:js', 'build:img', 'build:lib', 'build:html']);
+
+gulp.task('build:sass', function(done) {
+  gulp.src('./src/scss/app.scss')
     .pipe(sass())
     .on('error', sass.logError)
     .pipe(gulp.dest('./www/css/'))
     .pipe(minifyCss({
       keepSpecialComments: 0
     }))
-    .pipe(rename({ extname: '.min.css' }))
+    .pipe(rename({
+      extname: '.min.css'
+    }))
     .pipe(gulp.dest('./www/css/'))
     .on('end', done);
+});
+
+gulp.task("build:js", function() {
+  gulp.src("src/js/app.js")
+    .pipe(include())
+    .on('error', console.log)
+    .pipe(gulp.dest("www/js"));
+});
+
+gulp.task("build:img", function() {
+  return gulp.src("src/img/*")
+    .pipe(gulp.dest("www/img"));
+});
+
+gulp.task("build:lib", function() {
+  return gulp.src("src/lib/**/*")
+    .pipe(gulp.dest("www/lib"));
+});
+
+gulp.task('build:html', function() {
+  // var YOUR_LOCALS = {};
+
+  return gulp.src('./src/**/*.jade')
+    .pipe(jade({
+      // locals: YOUR_LOCALS
+      pretty: true
+    }))
+    .pipe(gulp.dest('./www/'))
 });
 
 gulp.task('watch', function() {
