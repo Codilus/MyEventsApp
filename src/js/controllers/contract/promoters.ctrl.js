@@ -4,9 +4,12 @@
   angular.module('MyEventsApp')
 	  .controller('ContractPromotersCtrl', function($scope, Promoter) {
 
-			$scope.promoters = Promoter.getAll();
+      Promoter.getAll().then(setPromoters);
+
+      function setPromoters(promoters) {
+  			$scope.promoters = promoters;
+      }
 
 		});
-
 
 })();

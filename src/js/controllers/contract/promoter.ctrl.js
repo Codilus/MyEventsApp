@@ -5,7 +5,11 @@
 	  .controller('ContractPromoterCtrl',
 			function($scope, $stateParams, Promoter) {
 
-				$scope.promoter = Promoter.get($stateParams.promoterId);
+        Promoter.get($stateParams.promoterId).then(setPromoter);
+
+        function setPromoter(promoter) {
+          $scope.promoter = promoter;
+        }
 
 			});
 
