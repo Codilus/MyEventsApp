@@ -2,10 +2,8 @@
   'use strict';
 
   angular.module('MyEventsApp')
-	  .factory('Budget', function($resource) {
-
+	  .factory('BudgetResource', function($resource) {
 			return $resource('/contracts/:id', { id:'@id' });
-
 		});
 
 })();
