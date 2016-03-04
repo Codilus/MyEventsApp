@@ -13,10 +13,15 @@
         }
 
         $scope.requestBudget = function() {
-          var budget = new BudgetResource();
-          budget.clientId = 1;
-          budget.promoterId = $scope.promoter.id;
+          var budget = buildBudget();
           budget.$save();
+        }
+
+        function buildBudget() {
+          var budget = new BudgetResource();
+          budget.eventId = parseInt($stateParams.eventId);
+          budget.promoterId = $scope.promoter.id;
+          return budget;
         }
 
 			});

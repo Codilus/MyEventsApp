@@ -3,6 +3,6 @@ ion-view(view-title='Promoters')
 		ion-list
 			a.item(
 				collection-repeat='promoter in promoters'
-				href='#/app/contract/promoter/{{promoter.id}}')
+				href='#/app/contract/event/{{eventId}}/promoter/{{promoter.id}}')
 				p {{promoter.name}}
 				p Rating: {{promoter.rating}}

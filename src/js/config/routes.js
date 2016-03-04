@@ -47,7 +47,7 @@
         }
       })
       .state('app.contract_promoters', {
-        url: '/contract/promoters',
+        url: '/contract/event/:eventId/promoters',
         views: {
           'menuContent': {
             templateUrl: 'templates/contract/promoters.html',
@@ -56,7 +56,7 @@
         }
       })
       .state('app.contract_promoter', {
-        url: '/contract/promoter/:promoterId',
+        url: '/contract/event/:eventId/promoter/:promoterId',
         views: {
           'menuContent': {
             templateUrl: 'templates/contract/promoter.html',
