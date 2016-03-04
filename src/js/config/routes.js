@@ -28,15 +28,15 @@
             }
           }
         })
-        .state('app.playlists', {
-          url: '/playlists',
-          views: {
-            'menuContent': {
-              templateUrl: 'templates/playlists.html',
-              controller: 'PlaylistsCtrl'
-            }
+      .state('app.playlists', {
+        url: '/playlists',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/playlists.html',
+            controller: 'PlaylistsCtrl'
           }
-        })
+        }
+      })
 
       .state('app.single', {
         url: '/playlists/:playlistId',
@@ -44,6 +44,16 @@
           'menuContent': {
             templateUrl: 'templates/playlist.html',
             controller: 'PlaylistCtrl'
+          }
+        }
+      })
+
+      .state('app.promoter', {
+        url: '/promoter/dashboard',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/promoter/dashboard.html',
+            controller: 'PromoterDashboardCtrl'
           }
         }
       });
