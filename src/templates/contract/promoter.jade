@@ -2,5 +2,5 @@ ion-view(view-title='Promoters')
 	ion-content
 		p {{promoter.name}}
 		p Rating: {{promoter.rating}}
-	.bar.bar-footer.bar-royal
+	.bar.bar-footer.bar-royal(ng-click='requestBudget()')
 		.title Solicitar orçamento
