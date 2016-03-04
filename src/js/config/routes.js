@@ -55,6 +55,15 @@
           }
         }
       })
+      .state('app.contract_promoter', {
+        url: '/contract/promoter/:promoterId',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/contract/promoter.html',
+            controller: 'ContractPromoterCtrl'
+          }
+        }
+      })
 
       .state('app.single', {
         url: '/playlists/:playlistId',
