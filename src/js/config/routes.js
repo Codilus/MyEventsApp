@@ -37,6 +37,33 @@
             }
           }
         })
+      .state('app.fake_event', {
+        url: '/contract/fake_event',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/contract/fake_event.html',
+            controller: 'FakeEventDetailCtrl'
+          }
+        }
+      })
+      .state('app.contract_promoters', {
+        url: '/contract/promoters',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/contract/promoters.html',
+            controller: 'ContractPromotersCtrl'
+          }
+        }
+      })
+      .state('app.contract_promoter', {
+        url: '/contract/promoter/:promoterId',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/contract/promoter.html',
+            controller: 'ContractPromoterCtrl'
+          }
+        }
+      })
 
       .state('app.single', {
         url: '/playlists/:playlistId',
