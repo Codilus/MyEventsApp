@@ -56,6 +56,16 @@
             controller: 'PromoterDashboardCtrl'
           }
         }
+      })
+
+      .state('app.promoter_profile', {
+        url: '/promoter/profile',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/promoter/profile.html',
+            controller: 'PromoterProfileCtrl'
+          }
+        }
       });
       // if none of the above states are matched, use this as the fallback
       $urlRouterProvider.otherwise('/app/playlists');
