@@ -14,7 +14,7 @@
       console.log($scope.user);
       $auth.submitLogin($scope.user).then(function(result) {
         console.log(result);
-        $http.get("http://localhost:3001/client/api/events");
+        $http.get("http://localhost:3000/client/api/events");
       }, function(err) {
         console.log(err);
       });

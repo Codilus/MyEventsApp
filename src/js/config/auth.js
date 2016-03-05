@@ -2,9 +2,9 @@
   'use strict';
 
   angular.module('MyEventsApp')
-    .config(function($authProvider) {
+    .config(function($authProvider, Paths) {
       $authProvider.configure({
-        apiUrl: 'http://localhost:3001/client',
+        apiUrl: Paths.api,
         storage: "localStorage",
       });
     });
