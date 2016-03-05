@@ -4,9 +4,8 @@
   angular.module('MyEventsApp')
     .config(function($authProvider) {
       $authProvider.configure({
-        apiUrl: 'http://localhost:3001/clients',
+        apiUrl: 'http://localhost:3001/client',
         storage: "localStorage",
-        forceValidateToken: true
       });
     });
 

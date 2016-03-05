@@ -3,8 +3,8 @@
 
   angular.module('MyEventsApp')
 
-  .controller('LoginCtrl', function($scope, $ionicModal, $auth) {
-    $scope.user = {};
+  .controller('LoginCtrl', function($scope, $ionicModal, $auth, $http) {
+    $scope.user = {email: "joao@joao.com", password: "123123123"};
     $scope.login = login;
 
 
@@ -12,7 +12,13 @@
 
     function login() {
       console.log($scope.user);
-      $auth.submitLogin($scope.user).then(console.log.bind(console), console.log.bind(console));
+      $auth.submitLogin($scope.user).then(function(result) {
+        console.log(result);
+        $http.get("http://localhost:3001/client/api/events");
+      }, function(err) {
+        console.log(err);
+      });
+
     }
   });
 
