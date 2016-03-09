@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('MyEventsApp')
-	  .controller('ContractPromotersCtrl',
+	  .controller('OfferPromotersCtrl',
       function($scope, $stateParams, Promoter) {
 
         $scope.eventId = $stateParams.eventId;

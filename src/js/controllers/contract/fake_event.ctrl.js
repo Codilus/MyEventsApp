@@ -4,7 +4,7 @@
   angular.module('MyEventsApp')
 	  .controller('FakeEventDetailCtrl', function($scope) {
       $scope.event = {
-        id: 10
+        id: 14
       };
     });
 

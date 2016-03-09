@@ -14,6 +14,7 @@
         { id: 8, name: 'Promoter 8', rating: 5 },
         { id: 9, name: 'Promoter 9', rating: 1 },
         { id: 10, name: 'Promoter 10', rating: 3 },
+        { id: 31, name: 'Promoter 31', rating: 3 },
       ];
 
 			return {

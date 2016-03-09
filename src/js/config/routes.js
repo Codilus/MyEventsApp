@@ -38,29 +38,29 @@
           }
         })
       .state('app.fake_event', {
-        url: '/contract/fake_event',
+        url: '/offer/fake_event',
         views: {
           'menuContent': {
-            templateUrl: 'templates/contract/fake_event.html',
+            templateUrl: 'templates/offer/fake_event.html',
             controller: 'FakeEventDetailCtrl'
           }
         }
       })
-      .state('app.contract_promoters', {
-        url: '/contract/event/:eventId/promoters',
+      .state('app.offer_promoters', {
+        url: '/offer/event/:eventId/promoters',
         views: {
           'menuContent': {
-            templateUrl: 'templates/contract/promoters.html',
-            controller: 'ContractPromotersCtrl'
+            templateUrl: 'templates/offer/promoters.html',
+            controller: 'OfferPromotersCtrl'
           }
         }
       })
-      .state('app.contract_promoter', {
-        url: '/contract/event/:eventId/promoter/:promoterId',
+      .state('app.offer_promoter', {
+        url: '/offer/event/:eventId/promoter/:promoterId',
         views: {
           'menuContent': {
-            templateUrl: 'templates/contract/promoter.html',
-            controller: 'ContractPromoterCtrl'
+            templateUrl: 'templates/offer/promoter.html',
+            controller: 'OfferPromoterCtrl'
           }
         }
       })

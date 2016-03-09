@@ -2,8 +2,8 @@
   'use strict';
 
   angular.module('MyEventsApp')
-	  .controller('ContractPromoterCtrl',
-			function($scope, $stateParams, Promoter, BudgetResource) {
+	  .controller('OfferPromoterCtrl',
+			function($scope, $stateParams, Promoter, OfferResource) {
 
         Promoter.get($stateParams.promoterId)
           .then(setPromoter);
@@ -13,15 +13,15 @@
         }
 
         $scope.requestBudget = function() {
-          var budget = buildBudget();
-          budget.$save();
+          buildOfferResource().$save();
         }
 
-        function buildBudget() {
-          var budget = new BudgetResource();
-          budget.eventId = parseInt($stateParams.eventId);
-          budget.promoterId = $scope.promoter.id;
-          return budget;
+        function buildOfferResource() {
+          var offer = new OfferResource({
+            event_id: parseInt($stateParams.eventId),
+            promoter_id: $scope.promoter.id
+          });
+          return offer;
         }
 
 			});
