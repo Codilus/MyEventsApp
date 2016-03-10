@@ -5,8 +5,7 @@
 	  .controller('OfferBudgetNewCtrl',
 			function($scope, $stateParams, OfferResource) {
 
-        Promoter.get($stateParams.offerId)
-          .then(setOffer);
+        OfferResource.get({ id: $stateParams.offerId }, setOffer);
 
         function setOffer(offer) {
           $scope.offer = offer;

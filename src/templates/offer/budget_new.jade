@@ -7,9 +7,8 @@ ion-view(view-title='New Budget')
 					type="number"
 					placeholder="Budget Price")
 			label.item.item-input
-				input(
+				textarea(
 					ng-model="budgetDescription"
-					type="textarea"
 					placeholder="Budget Description")
 		button.button.button-block.button-positive(ng-click="sendBudget()")
 			| Send Budget
