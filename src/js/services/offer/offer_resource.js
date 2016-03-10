@@ -3,7 +3,9 @@
 
   angular.module('MyEventsApp')
 	  .factory('OfferResource', function($resource) {
-			return $resource('/offers/:id', { id:'@id' });
+			return $resource('/offers/:id', { id:'@id' }, {
+        update: { method: 'PUT' }
+      });
 		});
 
 })();

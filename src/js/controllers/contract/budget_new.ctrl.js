@@ -11,8 +11,14 @@
           $scope.offer = offer;
         }
 
-        $scope.sendBudget = function() {
-					console.log('confirmed');
+        $scope.sendBudget = function(budgetPrice, budgetDescription) {
+					$scope.offer.budget_price = budgetPrice;
+					$scope.offer.budget_description = budgetDescription;
+					$scope.offer.status = "PENDING_CONFIRMATION";
+					$scope.offer.$update()
+						.then(function() {
+
+						});
         }
 
 			});
