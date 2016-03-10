@@ -26,6 +26,10 @@
 					}
 				}
 
+				$scope.onContractPromoterClicked = function() {
+	        $location.path('/app/offer/event/' + $scope.event.id + '/promoters');
+	      }
+
 			});
 
 })();

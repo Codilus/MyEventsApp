@@ -1,6 +1,9 @@
-ion-view(view-title='Event')
+ion-view(view-title='Evento')
 	ion-nav-buttons(side='right')
 		button.button.button-icon.button-clear.ion-ios-list-outline(ng-click='showOffers()' ng-show='shouldShowOfferButton')
 	ion-content
 		p ID: {{event.id}}
 		p {{event.name}}
+	ion-footer-bar
+		button.button.button-full.button-positive(ng-click='onContractPromoterClicked()')
+			| Contratar Promoter
