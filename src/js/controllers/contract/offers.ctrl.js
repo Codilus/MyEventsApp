@@ -2,10 +2,10 @@
   'use strict';
 
   angular.module('MyEventsApp')
-	  .controller('OffersCtrl',
-			function($scope, OfferResource, CurrentUser) {
+	  .controller('OfferOffersCtrl',
+			function($scope, OfferResource) {
 
-        OfferResource.query({ by_promoter_id: CurrentUser.id }, setOffers);
+        OfferResource.query({ by_promoter_id: 31 }, setOffers);
 
         function setOffers(offers) {
           $scope.offers = offers;

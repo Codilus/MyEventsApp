@@ -37,21 +37,21 @@
             }
           }
         })
-        .state('app.offer_details', {
-          url: '/offers/:offerId',
-          views: {
-            'menuContent': {
-              templateUrl: 'templates/offer/offer_details.html',
-              controller: 'OfferDetailsCtrl'
-            }
-          }
-        })
-        .state('app.offers', {
-          url: '/offers',
+        .state('app.offer_offers', {
+          url: '/offer/offers',
           views: {
             'menuContent': {
               templateUrl: 'templates/offer/offers.html',
-              controller: 'OffersCtrl'
+              controller: 'OfferOffersCtrl'
+            }
+          }
+        })
+        .state('app.offer_offer', {
+          url: '/offer/offers/:offerId',
+          views: {
+            'menuContent': {
+              templateUrl: 'templates/offer/offer.html',
+              controller: 'OfferOfferCtrl'
             }
           }
         })

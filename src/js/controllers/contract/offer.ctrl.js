@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('MyEventsApp')
-	  .controller('OfferDetailsCtrl',
+	  .controller('OfferOfferCtrl',
 			function($scope, $stateParams, OfferResource, $location) {
 
         OfferResource.get({ id: $stateParams.offerId }, setOffer);
