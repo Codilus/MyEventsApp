@@ -27,7 +27,7 @@
 				}
 
 				$scope.onContractPromoterClicked = function() {
-	        $location.path('/app/offer/event/' + $scope.event.id + '/promoters');
+	        $location.path('/app/offer/events/' + $scope.event.id + '/promoters');
 	      }
 
 			});
