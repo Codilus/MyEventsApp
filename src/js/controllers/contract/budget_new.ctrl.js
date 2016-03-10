@@ -3,7 +3,7 @@
 
   angular.module('MyEventsApp')
 	  .controller('OfferBudgetNewCtrl',
-			function($scope, $stateParams, OfferResource) {
+			function($scope, $stateParams, OfferResource, $location) {
 
         OfferResource.get({ id: $stateParams.offerId }, setOffer);
 
@@ -17,7 +17,8 @@
 					$scope.offer.status = "PENDING_CONFIRMATION";
 					$scope.offer.$update()
 						.then(function() {
-
+		          $location.path('/app/offers');
+		          $location.replace();
 						});
         }
 
