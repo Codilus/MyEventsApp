@@ -3,7 +3,7 @@
 
   angular.module('MyEventsApp')
 	  .controller('OfferPromoterCtrl',
-			function($scope, $stateParams, Promoter, OfferResource) {
+			function($scope, $stateParams, Promoter, OfferResource, $location) {
 
         Promoter.get($stateParams.promoterId)
           .then(setPromoter);
@@ -13,7 +13,13 @@
         }
 
         $scope.requestBudget = function() {
-          buildOfferResource().$save();
+          buildOfferResource().$save()
+            .then(returnToPromoters);
+        }
+
+        function returnToPromoters() {
+          $location.path('/app/offer/event/' + $stateParams.eventId + '/promoters');
+          $location.replace();
         }
 
         function buildOfferResource() {
