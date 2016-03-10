@@ -1,0 +1,7 @@
+ion-view(view-title='Offers')
+	ion-content
+		ion-list
+			a.item(
+				collection-repeat='offer in offers'
+				href='#/app/offer/{{offer.id}}')
+				p {{offer.client.name}}

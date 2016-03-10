@@ -10,33 +10,6 @@
         templateUrl: 'templates/menu.html',
         controller: 'AppCtrl'
       })
-
-      .state('app.search', {
-        url: '/search',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/search.html'
-          }
-        }
-      })
-
-      .state('app.browse', {
-          url: '/browse',
-          views: {
-            'menuContent': {
-              templateUrl: 'templates/browse.html'
-            }
-          }
-        })
-        .state('app.playlists', {
-          url: '/playlists',
-          views: {
-            'menuContent': {
-              templateUrl: 'templates/playlists.html',
-              controller: 'PlaylistsCtrl'
-            }
-          }
-        })
       .state('app.fake_event', {
         url: '/offer/fake_event',
         views: {
@@ -64,18 +37,17 @@
           }
         }
       })
-
-      .state('app.single', {
-        url: '/playlists/:playlistId',
+      .state('app.offers', {
+        url: '/offers',
         views: {
           'menuContent': {
-            templateUrl: 'templates/playlist.html',
-            controller: 'PlaylistCtrl'
+            templateUrl: 'templates/offer/offers.html',
+            controller: 'OffersCtrl'
           }
         }
       });
       // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/app/playlists');
+      $urlRouterProvider.otherwise('/offer/fake_event');
     });
 
 })();
