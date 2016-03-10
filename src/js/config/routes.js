@@ -37,6 +37,15 @@
           }
         }
       })
+      .state('app.offer_details', {
+        url: '/offers/:offerId',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/offer/offer_details.html',
+            controller: 'OfferDetailsCtrl'
+          }
+        }
+      })
       .state('app.offers', {
         url: '/offers',
         views: {
@@ -45,7 +54,17 @@
             controller: 'OffersCtrl'
           }
         }
-      });
+      })
+      .state('app.offer_budget_new', {
+        url: '/offers/:offerId/budget/new',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/offer/budget_new.html',
+            controller: 'OfferBudgetNewCtrl'
+          }
+        }
+      })
+      ;
       // if none of the above states are matched, use this as the fallback
       $urlRouterProvider.otherwise('/offer/fake_event');
     });

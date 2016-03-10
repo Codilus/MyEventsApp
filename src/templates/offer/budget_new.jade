@@ -1,0 +1,15 @@
+ion-view(view-title='New Budget')
+	ion-content
+		.list
+			label.item.item-input
+				input(
+					ng-model="budgetPrice"
+					type="number"
+					placeholder="Budget Price")
+			label.item.item-input
+				input(
+					ng-model="budgetDescription"
+					type="textarea"
+					placeholder="Budget Description")
+		button.button.button-block.button-positive(ng-click="sendBudget()")
+			| Send Budget
