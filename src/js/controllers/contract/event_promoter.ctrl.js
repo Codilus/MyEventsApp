@@ -2,11 +2,10 @@
   'use strict';
 
   angular.module('MyEventsApp')
-	  .controller('OfferPromoterCtrl',
-			function($scope, $stateParams, Promoter, OfferResource, $location) {
+	  .controller('OfferEventPromoterCtrl',
+			function($scope, $stateParams, PromoterResource, OfferResource, $location) {
 
-        Promoter.get($stateParams.promoterId)
-          .then(setPromoter);
+        PromoterResource.get({ id: $stateParams.promoterId }, setPromoter);
 
         function setPromoter(promoter) {
           $scope.promoter = promoter;
@@ -18,7 +17,7 @@
         }
 
         function returnToPromoters() {
-          $location.path('/app/offer/event/' + $stateParams.eventId + '/promoters');
+          $location.path('/app/offer/events/' + $stateParams.eventId + '/promoters');
           $location.replace();
         }
 

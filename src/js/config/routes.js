@@ -19,21 +19,21 @@
             }
           }
         })
-        .state('app.offer_promoters', {
-          url: '/offer/event/:eventId/promoters',
+        .state('app.offer_event_promoters', {
+          url: '/offer/events/:eventId/promoters',
           views: {
             'menuContent': {
-              templateUrl: 'templates/offer/promoters.html',
-              controller: 'OfferPromotersCtrl'
+              templateUrl: 'templates/offer/event_promoters.html',
+              controller: 'OfferEventPromotersCtrl'
             }
           }
         })
-        .state('app.offer_promoter', {
-          url: '/offer/event/:eventId/promoter/:promoterId',
+        .state('app.offer_event_promoter', {
+          url: '/offer/events/:eventId/promoters/:promoterId',
           views: {
             'menuContent': {
-              templateUrl: 'templates/offer/promoter.html',
-              controller: 'OfferPromoterCtrl'
+              templateUrl: 'templates/offer/event_promoter.html',
+              controller: 'OfferEventPromoterCtrl'
             }
           }
         })

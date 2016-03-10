@@ -2,12 +2,12 @@
   'use strict';
 
   angular.module('MyEventsApp')
-	  .controller('OfferPromotersCtrl',
-      function($scope, $stateParams, Promoter) {
+	  .controller('OfferEventPromotersCtrl',
+      function($scope, $stateParams, PromoterResource) {
 
         $scope.eventId = $stateParams.eventId;
 
-        Promoter.getAll().then(setPromoters);
+        PromoterResource.query({}, setPromoters);
 
         function setPromoters(promoters) {
           $scope.promoters = promoters;

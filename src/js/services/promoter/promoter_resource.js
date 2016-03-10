@@ -2,8 +2,8 @@
   'use strict';
 
   angular.module('MyEventsApp')
-	  .factory('Promoter', function($q) {
-      var promoters = [
+	  .factory('PromoterResource', function() {
+			var promoters = [
         { id: 1, name: 'Promoter 1', rating: 1 },
         { id: 2, name: 'Promoter 2', rating: 3 },
         { id: 3, name: 'Promoter 3', rating: 2 },
@@ -18,22 +18,15 @@
       ];
 
 			return {
-				getAll: function() {
-          return $q(function(resolve, reject) {
-            resolve(promoters);
-          });
+				query: function(identifier, callback) {
+					callback(promoters);
 				},
-        get: function(id) {
-          return $q(function(resolve, reject) {
-            var promoter = promoters.find(function(promoter) {
-              return promoter.id == id;
-            });
-
-            resolve(promoter);
-          });
-        }
+				get: function(identifier, callback) {
+					callback(promoters.find(function(promoter) {
+						return promoter.id == identifier.id;
+					}));
+				}
 			};
 		});
-
 
 })();
