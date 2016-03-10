@@ -1,0 +1,8 @@
+ion-view(view-title='Ofertas')
+	ion-content
+		ion-list
+			ion-item(
+				collection-repeat='offer in offers'
+				href='#/app/offer/events/{{eventId}}/offers/{{offer.id}}')
+				p Promoter {{offer.promoter.name}}
+				p Preço: {{offer.budget_price}}

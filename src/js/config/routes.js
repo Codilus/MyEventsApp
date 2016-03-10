@@ -64,6 +64,33 @@
           }
         }
       })
+      .state('app.offer_event', {
+        url: '/offer/event/:eventId',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/offer/event.html',
+            controller: 'OfferEventCtrl'
+          }
+        }
+      })
+      .state('app.offer_event_offers', {
+        url: '/offer/events/:eventId/offers',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/offer/event_offers.html',
+            controller: 'EventOffersCtrl'
+          }
+        }
+      })
+      .state('app.offer_event_offer', {
+        url: '/offer/events/:eventId/offers/:offerId',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/offer/event.html',
+            controller: 'EventOfferCtrl'
+          }
+        }
+      })
       ;
       // if none of the above states are matched, use this as the fallback
       $urlRouterProvider.otherwise('/app/offer/fake_event');

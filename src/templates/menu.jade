@@ -10,9 +10,15 @@ ion-side-menus(enable-menu-with-back-views='false')
       h1.title Left
     ion-content
       ion-list
-        ion-item(menu-close='', href='#/app/offer/fake_event')
+        ion-item(href='#/app/offer/fake_event')
           | Contract Promoter
-        ion-item(menu-close='', href='#/app/offers')
+        ion-item(href='#/app/offers')
           | Offers
-        ion-item(menu-close='', href='#/app/playlists')
-          | Playlists
+        ion-item(href='#/app/offer/event/3')
+          | Evento sem ofertas
+        ion-item(href='#/app/offer/event/10')
+          | Evento com 1 oferta
+        ion-item(href='#/app/offer/event/14')
+          | Evento
+        ion-item(href='#/app/offer/event/20')
+          | Evento com mais de 1 oferta
