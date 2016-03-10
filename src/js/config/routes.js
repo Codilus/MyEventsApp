@@ -66,7 +66,7 @@
       })
       ;
       // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/offer/fake_event');
+      $urlRouterProvider.otherwise('/app/offer/fake_event');
     });
 
 })();
