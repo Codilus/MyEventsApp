@@ -1,3 +1,21 @@
 ion-view(view-title='Minha Conta')
   ion-content
-        
+    form(ng-submit="save()", name="updateForm")
+      .list
+        label.item.item-input.item-stacked-label
+          span.input-label Primeiro nome
+          input(type='text', placeholder='Nome', ng-model="user.first_name")
+        label.item.item-input.item-stacked-label
+          span.input-label Sobrenome
+          input(type='text', placeholder='Sobrenome', ng-model="user.last_name")
+        label.item.item-input.item-stacked-label
+          span.input-label Email
+          input(type='text', placeholder='Email', ng-model="user.email")
+        label.item.item-input.item-stacked-label
+          span.input-label Nova Senha
+          input(type='password', placeholder='Nova Senha', ng-model="user.password")
+        label.item.item-input.item-stacked-label
+          span.input-label Confirmação de senha
+          input(type='password', placeholder='Confirmação de senha', ng-model="user.password_confirmation", ng-required="user.password")
+      .padding
+        button.button.button-block.button-positive(ng-disabled="updateForm.$invalid") Salvar alterações
