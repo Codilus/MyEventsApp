@@ -6,6 +6,9 @@
   angular.module('MyEventsApp')
   .constant("Paths", {
     server: SERVER_PATH,
-    api: SERVER_PATH
+    api: SERVER_PATH,
+    client: {
+      events: SERVER_PATH + "/client/api/" + "events"
+    }
   });
 })();

@@ -44,6 +44,24 @@
             }
           }
         })
+        .state('client.event-new', {
+          url: '/events/new',
+          views: {
+            'content': {
+              templateUrl: 'templates/client/events/new.html',
+              controller: 'ClientEventsNewCtrl'
+            }
+          }
+        })
+        .state('client.event-show', {
+          url: '/events/{:eventId}',
+          views: {
+            'content': {
+              templateUrl: 'templates/client/events/show.html',
+              controller: 'ClientEventsShowCtrl'
+            }
+          }
+        })
         .state('client.account', {
           url: '/account',
           views: {
