@@ -1,2 +1,19 @@
 ion-view(view-title='{{event.name}}')
   ion-content
+    .list
+      label.item.item-input.item-stacked-label
+        strong.input-label Nome
+        br
+        {{event.name}}
+      label.item.item-input.item-stacked-label
+        strong.input-label Número de convidados
+        br
+        {{event.number_of_guests}}
+      label.item.item-input.item-stacked-label
+        strong.input-label Data de realização do evento
+        br
+        {{event.date | date}}
+      label.item.item-input.item-stacked-label
+        strong.input-label Descrição
+        br
+        {{event.description}}

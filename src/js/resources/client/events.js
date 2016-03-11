@@ -5,7 +5,7 @@
 
   .service('ClientEventResource', function($resource, Paths) {
 
-    return $resource(Paths.client.events);
+    return $resource(Paths.client.events + "/:id");
   });
 
 })();

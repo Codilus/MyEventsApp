@@ -54,11 +54,17 @@
           }
         })
         .state('client.event-show', {
-          url: '/events/{:eventId}',
+          url: '/events/:eventId',
           views: {
             'content': {
               templateUrl: 'templates/client/events/show.html',
               controller: 'ClientEventsShowCtrl'
+            }
+          },
+          resolve: {
+            currentEvent: function($stateParams, ClientEventResource) {
+              console.log($stateParams.eventId);
+              return ClientEventResource.get({id: $stateParams.eventId});
             }
           }
         })

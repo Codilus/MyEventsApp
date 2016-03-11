@@ -1,2 +1,18 @@
 ion-view(view-title='Novo Evento')
   ion-content
+    form(ng-submit="save()", name="eventForm")
+      .list
+        label.item.item-input.item-stacked-label
+          span.input-label Nome
+          input(type='text', placeholder='Nome do evento', ng-model="event.name", required)
+        label.item.item-input.item-stacked-label
+          span.input-label Número de convidados
+          input(type='number', placeholder='Número de convidados', ng-model="event.number_of_guests", min="0", required)
+        label.item.item-input.item-stacked-label
+          span.input-label Data de realização do evento
+          input(type='date', placeholder='Data de realização do evento', ng-model="event.date")
+        label.item.item-input.item-stacked-label
+          span.input-label Descrição
+          textarea(placeholder='Breve descrição do evento', ng-model="event.description", rows="5")
+      .padding
+        button.button.button-block.button-positive(ng-disabled="eventForm.$invalid") Criar evento

@@ -3,8 +3,8 @@
 
   angular.module('MyEventsApp')
 
-  .controller('ClientEventsShowCtrl', function($scope) {
-    $scope.event = {name: "Casamentoo", date: new Date()};
+  .controller('ClientEventsShowCtrl', function($scope, currentEvent) {
+    $scope.event = currentEvent;
   });
 
 })();
