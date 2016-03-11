@@ -19,7 +19,6 @@
         .catch(function(resp) {
           // handle error response
         });
-
     }
   });
 
