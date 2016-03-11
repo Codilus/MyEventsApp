@@ -3,7 +3,7 @@
 
   angular.module('MyEventsApp')
 
-  .controller('ClientCtrl', function($scope, $auth, $state) {
+  .controller('PromoterCtrl', function($scope, $auth, $state) {
     $scope.logout = logout;
 
     ////////////////////////////

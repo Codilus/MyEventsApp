@@ -9,7 +9,7 @@
           resolve: {
             verifyLoggedUser: function(AuthSrv, $state) {
               return AuthSrv.currentUser().then(function(user) {
-                $state.go("client.home");
+                $state.go("promoter.home");
               }, function(err) {
                 $state.go("login");
               });
@@ -26,30 +26,39 @@
           templateUrl: 'templates/register.html',
           controller: 'RegisterCtrl'
         })
-        .state('client', {
-          url: '/client',
-          templateUrl: 'templates/client.html',
+        .state('promoter', {
+          url: '/promoter',
+          templateUrl: 'templates/promoter.html',
           abstract: true,
-          controller: 'ClientCtrl',
+          controller: 'PromoterCtrl',
           resolve: {
 
           }
         })
-        .state('client.home', {
+        .state('promoter.home', {
           url: '/home',
           views: {
             'content': {
-              templateUrl: 'templates/client/home.html',
-              controller: 'ClientHomeCtrl'
+              templateUrl: 'templates/promoter/home.html',
+              controller: 'PromoterHomeCtrl'
             }
           }
         })
-        .state('client.account', {
+        .state('promoter.account', {
           url: '/account',
           views: {
             'content': {
-              templateUrl: 'templates/client/account.html',
-              controller: 'ClientAccountCtrl'
+              templateUrl: 'templates/promoter/account.html',
+              controller: 'PromoterAccountCtrl'
+            }
+          }
+        })
+        .state('promoter.events', {
+          url: '/events',
+          views: {
+            'content': {
+              templateUrl: 'templates/promoter/events.html',
+              controller: 'PromoterEventsCtrl'
             }
           }
         });

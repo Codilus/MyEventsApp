@@ -1,18 +1,20 @@
 ion-side-menus(enable-menu-with-back-views='false')
   ion-side-menu-content
-    ion-nav-bar.bar-stable
+    ion-nav-bar.bar-royal
       ion-nav-back-button
       ion-nav-buttons(side='left')
         button.button.button-icon.button-clear.ion-navicon(menu-toggle='left')
     ion-nav-view(name='content')
   ion-side-menu(side='left')
-    ion-header-bar.bar-stable
+    ion-header-bar.bar-royal
       h1.title Menu
     ion-content
       ion-list
-        ion-item(menu-close='', ui-sref="client.home")
+        ion-item(menu-close='', ui-sref="promoter.home")
+          | Orçamentos
+        ion-item(menu-close='', ui-sref="promoter.events")
           | Eventos
-        ion-item(menu-close='', ui-sref="client.account")
+        ion-item(menu-close='', ui-sref="promoter.account")
           | Minha conta
         ion-item(menu-close='', ng-click="logout()")
           | Logout

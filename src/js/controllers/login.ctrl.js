@@ -10,8 +10,8 @@
     ////////////////////////////////
 
     function login() {
-      $auth.submitLogin($scope.user).then(function(result) {
-        $state.go("client.home");
+      $auth.submitLogin($scope.user).then(function() {
+        $state.go("promoter.home");
       }, function(err) {
         console.log(err);
       });

@@ -3,7 +3,7 @@
 
   angular.module('MyEventsApp')
 
-  .controller('ClientHomeCtrl', function($scope) {
+  .controller('PromoterEventsCtrl', function($scope) {
   });
 
 })();

@@ -3,7 +3,7 @@
 
   angular.module('MyEventsApp')
 
-  .controller('ClientAccountCtrl', function($scope, $auth) {
+  .controller('PromoterAccountCtrl', function($scope, $auth) {
     $scope.save = save;
 
     //////////////
