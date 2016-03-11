@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('MyEventsApp')
-	  .controller('EventOffersCtrl',
+	  .controller('OfferEventOffersCtrl',
       function($scope, $stateParams, OfferResource) {
 
         $scope.eventId = parseInt($stateParams.eventId);

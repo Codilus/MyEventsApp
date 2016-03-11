@@ -69,7 +69,7 @@
           views: {
             'menuContent': {
               templateUrl: 'templates/offer/event_offers.html',
-              controller: 'EventOffersCtrl'
+              controller: 'OfferEventOffersCtrl'
             }
           }
         })
@@ -78,7 +78,7 @@
           views: {
             'menuContent': {
               templateUrl: 'templates/offer/event.html',
-              controller: 'EventOfferCtrl'
+              controller: 'OfferEventOfferCtrl'
             }
           }
         })
