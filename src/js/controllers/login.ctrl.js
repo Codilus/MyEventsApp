@@ -4,7 +4,7 @@
   angular.module('MyEventsApp')
 
   .controller('LoginCtrl', function($scope, $ionicModal, $auth, $state) {
-    $scope.user = {email: "joao@joao.com", password: "123123123"};
+    $scope.user = {};
     $scope.login = login;
 
     ////////////////////////////////
