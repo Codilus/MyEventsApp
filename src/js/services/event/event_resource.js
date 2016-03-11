@@ -44,9 +44,11 @@
 				get: function(identifier) {
 					var id = identifier.id;
 					return $q(function(resolve) {
-						resolve(events.find(function(event) {
-							return event.id == id;
-						}));
+            for (var i = 0; i < events.length; i++) {
+              if (events[i].id == id) {
+                return resolve(events[i]);
+              }
+            }
 					});
 				}
 			};
