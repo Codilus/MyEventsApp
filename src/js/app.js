@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('MyEventsApp', ['ionic']);
+  angular.module('MyEventsApp', ['ionic', 'ng-token-auth']);
 })();
 
 //=require ./*/*.js

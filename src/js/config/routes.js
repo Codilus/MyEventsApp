@@ -4,51 +4,56 @@
   angular.module('MyEventsApp')
     .config(function($stateProvider, $urlRouterProvider) {
       $stateProvider
-        .state('app', {
-        url: '/app',
-        abstract: true,
-        templateUrl: 'templates/menu.html',
-        controller: 'AppCtrl'
-      })
-
-      .state('app.search', {
-        url: '/search',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/search.html'
-          }
-        }
-      })
-
-      .state('app.browse', {
-          url: '/browse',
-          views: {
-            'menuContent': {
-              templateUrl: 'templates/browse.html'
+        .state('home', {
+          url: '/home',
+          resolve: {
+            verifyLoggedUser: function(AuthSrv, $state) {
+              return AuthSrv.currentUser().then(function(user) {
+                $state.go("client.home");
+              }, function(err) {
+                $state.go("login");
+              });
             }
           }
         })
-        .state('app.playlists', {
-          url: '/playlists',
+        .state('login', {
+          url: '/login',
+          templateUrl: 'templates/login.html',
+          controller: 'LoginCtrl'
+        })
+        .state('register', {
+          url: '/register',
+          templateUrl: 'templates/register.html',
+          controller: 'RegisterCtrl'
+        })
+        .state('client', {
+          url: '/client',
+          templateUrl: 'templates/client.html',
+          abstract: true,
+          controller: 'ClientCtrl',
+          resolve: {
+
+          }
+        })
+        .state('client.home', {
+          url: '/home',
           views: {
-            'menuContent': {
-              templateUrl: 'templates/playlists.html',
-              controller: 'PlaylistsCtrl'
+            'content': {
+              templateUrl: 'templates/client/home.html',
+              controller: 'ClientHomeCtrl'
             }
           }
         })
-
-      .state('app.single', {
-        url: '/playlists/:playlistId',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/playlist.html',
-            controller: 'PlaylistCtrl'
+        .state('client.account', {
+          url: '/account',
+          views: {
+            'content': {
+              templateUrl: 'templates/client/account.html',
+              controller: 'ClientAccountCtrl'
+            }
           }
-        }
-      });
-      // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/app/playlists');
+        });
+      $urlRouterProvider.otherwise('/home');
     });
 
 })();

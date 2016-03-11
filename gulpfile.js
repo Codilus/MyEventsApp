@@ -10,7 +10,11 @@ var jade = require('gulp-jade');
 var include = require("gulp-include");
 
 var paths = {
-  sass: ['./src/scss/**/*.scss']
+  sass: ['./src/scss/**/*.scss'],
+  js: ['./src/js/**/*.js'],
+  img: ['./src/img/**/*'],
+  lib: ['./src/lib/**/*/js'],
+  html: ['./src/**/*.jade']
 };
 
 gulp.task('default', ['build']);
@@ -61,7 +65,11 @@ gulp.task('build:html', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(paths.sass, ['sass']);
+  gulp.watch(paths.sass, ['build:sass']);
+  gulp.watch(paths.js, ['build:js']);
+  gulp.watch(paths.img, ['build:img']);
+  gulp.watch(paths.img, ['build:img']);
+  gulp.watch(paths.html, ['build:html']);
 });
 
 gulp.task('install', ['git-check'], function() {

@@ -1,0 +1,30 @@
+ion-view(view-title='Login', name='login-view')
+  .bar.bar-header
+    .h1.title Registro
+  ion-content.has-header
+    form(ng-submit="register()")
+      .list
+        label.item.item-input.item-stacked-label
+          span.input-label Primeiro nome
+          input(type='text', placeholder='Nome', ng-model="user.first_name")
+        label.item.item-input.item-stacked-label
+          span.input-label Sobrenome
+          input(type='text', placeholder='Sobrenome', ng-model="user.last_name")
+        label.item.item-input.item-stacked-label
+          span.input-label Email
+          input(type='text', placeholder='Email', ng-model="user.email")
+        label.item.item-input.item-stacked-label
+          span.input-label Senha
+          input(type='password', placeholder='Senha', ng-model="user.password")
+        label.item.item-input.item-stacked-label
+          span.input-label Confirmação de senha
+          input(type='password', placeholder='Confirmação de senha', ng-model="user.password_confirmation")
+        .item.item-input.item-select
+          .input-label
+            | Tipo da conta
+          select(ng-model="user.type")
+            option(selected='', value="Client") Contratante
+            option(value="Promoter") Promoter
+            option Fornecedor
+      .padding
+        button.button.button-block.button-positive Criar conta

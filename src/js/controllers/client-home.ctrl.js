@@ -3,8 +3,7 @@
 
   angular.module('MyEventsApp')
 
-  .controller('PlaylistCtrl', function($scope, $stateParams) {
+  .controller('ClientHomeCtrl', function($scope) {
   });
-
 
 })();
