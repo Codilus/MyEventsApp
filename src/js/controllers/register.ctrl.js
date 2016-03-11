@@ -14,7 +14,7 @@
     function register() {
       $auth.submitRegistration($scope.user)
         .then(function(resp) {
-          // handle success response
+          $state.go("home");
         })
         .catch(function(resp) {
           // handle error response
