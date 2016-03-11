@@ -23,8 +23,6 @@ ion-view(view-title='Login', name='login-view')
           .input-label
             | Tipo da conta
           select(ng-model="user.type")
-            option(selected='', value="Client") Contratante
             option(value="Promoter") Promoter
-            option Fornecedor
       .padding
         button.button.button-block.button-positive Criar conta

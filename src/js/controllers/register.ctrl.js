@@ -5,7 +5,7 @@
 
   .controller('RegisterCtrl', function($scope, $ionicModal, $auth, $state) {
     $scope.user = {
-      type: "Client"
+      type: "Promoter"
     };
     $scope.register = register;
 
