@@ -1,8 +1,13 @@
 ion-view(view-title='Promoters')
 	ion-content
+		label.item.item-input
+			input(
+				ng-model="search.name"
+				type="text"
+				placeholder="Buscar Promoter")
 		ion-list
 			ion-item(
-				collection-repeat='promoter in promoters'
+				collection-repeat='promoter in promoters | filter:search'
 				href='#/app/offer/events/{{eventId}}/promoters/{{promoter.id}}')
 				p {{promoter.name}}
 				p Pontuação: {{promoter.rating}}

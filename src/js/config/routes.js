@@ -56,7 +56,7 @@
           }
         })
         .state('app.offer_budget_new', {
-          url: '/offers/:offerId/budget/new',
+          url: '/offer/offers/:offerId/budget/new',
           views: {
             'menuContent': {
               templateUrl: 'templates/offer/budget_new.html',

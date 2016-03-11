@@ -12,7 +12,7 @@
         }
 
         $scope.createOffer = function() {
-          $location.path('/app/offers/' + $scope.offer.id + '/budget/new');
+          $location.path('/app/offer/offers/' + $scope.offer.id + '/budget/new');
         }
 
 			});
