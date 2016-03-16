@@ -3,11 +3,11 @@
 
   angular.module('MyEventsApp')
 	  .constant('BaseUrl', (function() {
-			var URL = 'http://192.168.0.137';
-			var PORT = '3000';
+      var DEVELOPMENT_URL = 'http://localhost:3000';
+      var PRODUCTION_URL = 'https://rocky-hamlet-43434.herokuapp.com';
 
 			return {
-				url: 'https://rocky-hamlet-43434.herokuapp.com'
+				url: DEVELOPMENT_URL
 			}
 	  })());
 })();
