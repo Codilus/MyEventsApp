@@ -16,6 +16,7 @@
 					$scope.offer.budget_description = budgetDescription;
 					$scope.offer.$update_budget()
 						.then(function() {
+              alert('Orçamento enviado com sucesso!');
 		          $location.path('/app/offer/offers');
 		          $location.replace();
 						});

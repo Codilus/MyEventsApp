@@ -7,7 +7,7 @@
 			var PORT = '3000';
 
 			return {
-				url: URL + ':' + PORT
+				url: 'https://rocky-hamlet-43434.herokuapp.com'
 			}
 	  })());
 })();

@@ -8,6 +8,6 @@ ion-view(view-title='Promoters')
 		ion-list
 			ion-item(
 				collection-repeat='promoter in promoters | filter:search'
-				href='#/app/offer/events/{{eventId}}/promoters/{{promoter.id}}')
+				ng-click='onPromoterSelected(promoter)')
 				p {{promoter.name}}
 				p Pontuação: {{promoter.rating}}

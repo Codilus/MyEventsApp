@@ -5,11 +5,11 @@ ion-view(view-title='New Budget')
 				input(
 					ng-model="budgetPrice"
 					type="number"
-					placeholder="Budget Price")
+					placeholder="Preço do orçamento")
 			label.item.item-input
 				textarea(
 					ng-model="budgetDescription"
-					placeholder="Budget Description")
+					placeholder="Descrição do orçamento")
 		button.button.button-block.button-positive(
 			ng-click="sendBudget(budgetPrice, budgetDescription)")
-			| Send Budget
+			| Enviar orçamento

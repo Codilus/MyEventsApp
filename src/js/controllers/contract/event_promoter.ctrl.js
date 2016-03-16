@@ -17,6 +17,7 @@
         }
 
         function returnToPromoters() {
+          alert('Solicitação feita com sucesso!');
           $location.path('/app/offer/events/' + $stateParams.eventId + '/promoters');
           $location.replace();
         }

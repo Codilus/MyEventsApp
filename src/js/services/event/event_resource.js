@@ -17,8 +17,8 @@
 					]
 				},
         {
-					id: 14,
-					name: 'Event 14',
+					id: 1,
+					name: 'Event 1',
 					offers: [
 						{ id: 12, status: 'PENDING_CONFIRMATION', budget_price: 1000, budget_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget risus at risus consequat ullamcorper. Pellentesque feugiat, purus vitae fermentum suscipit, sem nibh vestibulum magna, in faucibus urna turpis eu purus. Quisque sagittis magna eget massa aliquam, vulputate tristique tortor iaculis.' },
 						{ id: 12, status: 'PENDING_CONFIRMATION', budget_price: 1000, budget_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget risus at risus consequat ullamcorper. Pellentesque feugiat, purus vitae fermentum suscipit, sem nibh vestibulum magna, in faucibus urna turpis eu purus. Quisque sagittis magna eget massa aliquam, vulputate tristique tortor iaculis.' }

@@ -22,9 +22,11 @@
 					callback(promoters);
 				},
 				get: function(identifier, callback) {
-					callback(promoters.find(function(promoter) {
-						return promoter.id == identifier.id;
-					}));
+          for (var i = 0; i < promoters.length; i++) {
+            if (promoters[i].id == identifier.id) {
+              return callback(promoters[i]);
+            }
+          }
 				}
 			};
 		});
