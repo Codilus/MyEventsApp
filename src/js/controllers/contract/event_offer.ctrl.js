@@ -3,14 +3,14 @@
 
   angular.module('MyEventsApp')
 	  .controller('OfferEventOfferCtrl',
-      function($scope, $stateParams) {
+      function($scope, $stateParams, OfferResource) {
 
-        $scope.eventId = $stateParams.eventId;
+        $scope.offerId = parseInt($stateParams.offerId);
 
-        Promoter.getAll().then(setPromoters);
+        OfferResource.get({ id: $scope.offerId }, setOffer);
 
-        function setPromoters(promoters) {
-          $scope.promoters = promoters;
+        function setOffer(offer) {
+          $scope.offer = offer;
         }
 
       });

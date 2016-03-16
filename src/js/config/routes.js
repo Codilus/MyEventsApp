@@ -77,7 +77,7 @@
           url: '/offer/events/:eventId/offers/:offerId',
           views: {
             'menuContent': {
-              templateUrl: 'templates/offer/event.html',
+              templateUrl: 'templates/offer/event_offer.html',
               controller: 'OfferEventOfferCtrl'
             }
           }
