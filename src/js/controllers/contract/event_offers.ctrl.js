@@ -7,12 +7,10 @@
 
         $scope.eventId = parseInt($stateParams.eventId);
 
-        OfferResource.query({ by_client_id: 1 }, setOffers);
+        OfferResource.query({ by_event_id: $scope.eventId }, setOffers);
 
         function setOffers(offers) {
-          $scope.offers = offers.filter(function(offer) {
-						return offer.event_id == $scope.eventId;
-					});
+          $scope.offers = offers;
         }
 
       });
