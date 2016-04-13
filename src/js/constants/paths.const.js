@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var SERVER_PATH = "http://localhost:3000";
+  var SERVER_PATH = "https://my-events.herokuapp.com";
 
   angular.module('MyEventsApp')
   .constant("Paths", {
