@@ -1,0 +1,38 @@
+ion-view(view-title='Tarifação')
+  ion-content
+    form(ng-submit="getBilling()", name="billingForm")
+    .list
+      label.item.item-input.item-select
+        .input-label
+          | Mês
+        select(ng-model="billingFilter.month")
+          option(ng-repeat="month in months", value="{{$index + 1}}", ng-selected="$index + 1 == billingFilter.month") {{month}}
+      label.item.item-input.item-select
+        .input-label
+          | Ano
+        select(ng-model="billingFilter.year")
+          option(ng-repeat="year in years", value="{{year}}", ng-selected="year == billingFilter.year") {{year}}    
+      .padding
+        button.button.button-block.button-positive(ng-click="getBilling()") Calcular
+        
+      .billing-details(ng-show="billing")
+        .item.item-divider
+          | Detalhes da Tarifa
+        a.item.item-icon-left
+          i.icon.ion-android-time
+          | Tempo de uso
+          span.badge.badge-assertive {{billing.total_usage_in_hours | number:0}}h
+        a.item.item-icon-left
+          i.icon.ion-android-bar
+          | Eventos relizados
+          span.badge.badge-assertive {{billing.events_counter}}
+        a.item.item-icon-left
+          i.icon.ion-android-list
+          | Orçamentos solicidatos
+          span.badge.badge-assertive {{billing.offers_counter}}
+        a.item.item-icon-left
+          i.icon.ion-cash
+          | Tarifa total do período
+          span.badge.badge-assertive R$ {{billing.total_bill | number:2}}
+        .padding
+          button.button.button-calm Como é calculado minha tarifa?

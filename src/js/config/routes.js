@@ -32,7 +32,7 @@
           abstract: true,
           controller: 'ClientCtrl',
           resolve: {
-
+            currentUser: currentUserResolver
           }
         })
         .state('client.home', {
@@ -41,6 +41,15 @@
             'content': {
               templateUrl: 'templates/client/home.html',
               controller: 'ClientHomeCtrl'
+            }
+          }
+        })
+        .state('client.billing', {
+          url: '/billing',
+          views: {
+            'content': {
+              templateUrl: 'templates/client/billing.html',
+              controller: 'ClientBillingCtrl'
             }
           }
         })
@@ -55,5 +64,9 @@
         });
       $urlRouterProvider.otherwise('/home');
     });
+
+    function currentUserResolver(AuthSrv) {
+      return AuthSrv.currentUser();
+    }
 
 })();
