@@ -4,6 +4,9 @@ ion-view(view-title='Orçamento para {{offer.event.name}}')
 		p Preço: {{offer.budget_price}}
 		p Descrição:
 		p {{offer.budget_description}}
-	//- ion-footer-bar
-	//- 	button.button.button-full.button-positive(ng-click='requestBudget()')
-	//- 		| Solicitar orçamento
+	ion-footer-bar
+		.button-bar
+			button.button.button-full.button-positive(ng-click="acceptBudget()")
+				| Aceitar orçamento
+			button.button.button-full.button-assertive(ng-click="refuseBudget()")
+				| Recusar orçamento
