@@ -20,8 +20,8 @@ ion-view(view-title='Tarifação')
           | Detalhes da Tarifa
         a.item.item-icon-left
           i.icon.ion-android-time
-          | Tempo de uso
-          span.badge.badge-assertive {{billing.total_usage_in_hours | number:0}}h
+          | Processamento
+          span.badge.badge-assertive {{billing.process_usage_count | number:0}}
         a.item.item-icon-left
           i.icon.ion-android-bar
           | Eventos relizados
@@ -35,4 +35,4 @@ ion-view(view-title='Tarifação')
           | Tarifa total do período
           span.badge.badge-assertive R$ {{billing.total_bill | number:2}}
         .padding
-          button.button.button-calm Como é calculado minha tarifa?
+          button.button.button-calm(ng-click="showBillingDetails()") Como é calculado minha tarifa?

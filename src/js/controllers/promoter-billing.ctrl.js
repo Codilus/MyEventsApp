@@ -3,15 +3,15 @@
 
   angular.module('MyEventsApp')
 
-  .controller('PromoterBillingCtrl', function($scope, PromoterBillingResource) {
+  .controller('PromoterBillingCtrl', function($scope, PromoterBillingResource, $ionicPopup) {
     $scope.months = moment.months();
     $scope.years = getYears();
     $scope.billingFilter = {
-      month: moment().month(),
+      month: moment().month() + 1,
       year: moment().year()
     };
     $scope.getBilling = getBilling;
-
+    $scope.showBillingDetails = showBillingDetails; 
 
     getBilling();
 
@@ -20,7 +20,7 @@
     ////////////////////////////////
 
     function getBilling() {
-      console.log("oi");
+      // console.log("oi");
       $scope.billing = null;
       PromoterBillingResource.query($scope.billingFilter).$promise
         .then(function(billing) {
@@ -37,6 +37,15 @@
       }
 
       return years;
+    }
+
+    function showBillingDetails() {
+      $ionicPopup.alert({
+        template: '<p> O processamento indica quantas vezes foi requisitado algum processamento do Servidor. <br>\
+        Já Eventos realizados e Orçamentos solicitados indicam o número desses serviços usados no mês. <br>\
+        Cada um desses serviços e processamento tem uma tarifa associada.<p>',
+        title: "Como é calculado minha Tarifa?"
+      });
     }
   });
 

@@ -2,6 +2,8 @@ ion-view(view-title='Minha Conta')
   ion-content
     form(ng-submit="save()", name="updateForm")
       .list
+        .item.item-divider
+          | Informações da Conta
         label.item.item-input.item-stacked-label
           span.input-label Primeiro nome
           input(type='text', placeholder='Nome', ng-model="user.first_name")
@@ -17,5 +19,60 @@ ion-view(view-title='Minha Conta')
         label.item.item-input.item-stacked-label
           span.input-label Confirmação de senha
           input(type='password', placeholder='Confirmação de senha', ng-model="user.password_confirmation", ng-required="user.password")
+        label.item.item-input.item-stacked-label
+          span.input-label Nova Senha
+          input(type='password', placeholder='Nova Senha', ng-model="user.password")
+        .item.item-divider
+          | Especialidade
+        label.item.item-input.item-stacked-label
+          span.input-label Categoria
+          input(type='text', placeholder='Categoria')
+        label.item.item-input.item-stacked-label
+          span.input-label Comentário
+          input(type='text', placeholder='Comentário')  
+        .item.item-divider
+          | Experiência
+
+        .item.item-input.item-select
+          .input-label
+            | Tempo de Mercado
+          //- select(ng-model="user.type")
+          select
+            option(value="1") Menos de 1 ano
+            option(value="2") de 1 a 2 anos
+            option(value="3") de 3 a 4 anos
+            option(value="4") mais de 4 anos
+        label.item.item-input.item-stacked-label
+          span.input-label Comentário
+          input(type='text', placeholder='Comentário')
+        //- .item.item-input
+        //-   .input-label
+        //-     | Formas de Atendimento
+        //-     ion-list
+        //-       ion-checkbox(value="false") Telefone
+        //-       ion-checkbox(value="true") Email
+        //-       ion-checkbox(value="true") Reunião Presencial
+        .item.item-input
+          .input-label
+            | Formas de Atendimento
+            .list
+              .item.item-toggle
+                | Telefone
+                label.toggle.toggle-assertive
+                 input(type="checkbox")
+                 .track
+                   .handle
+              .item.item-toggle
+                | Email
+                label.toggle.toggle-assertive
+                 input(type="checkbox")
+                 .track
+                   .handle
+              .item.item-toggle
+                | Reunião Presencial
+                label.toggle.toggle-assertive
+                 input(type="checkbox")
+                 .track
+                   .handle
       .padding
         button.button.button-block.button-positive(ng-disabled="updateForm.$invalid") Salvar alterações
