@@ -53,6 +53,15 @@
             }
           }
         })
+        .state('promoter.billing', {
+          url: '/billing',
+          views: {
+            'content': {
+              templateUrl: 'templates/promoter/billing.html',
+              controller: 'PromoterBillingCtrl'
+            }
+          }
+        })
         .state('promoter.events', {
           url: '/events',
           views: {
