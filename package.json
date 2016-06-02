@@ -2,6 +2,10 @@
   "name": "myeventsapp",
   "version": "1.1.1",
   "description": "MyEventsApp: An Ionic project",
+  "scripts": {
+    "build": "gulp build",
+    "serve": "ionic serve"
+  },
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-concat": "^2.2.0",
